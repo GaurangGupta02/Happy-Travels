@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='happy.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        /* Flash Message Styles */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        li strong {
+            color: #666;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar"></div>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('booking_form') }}">Booking Form</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </div>
+    <h1>Success Page</h1>
+
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li><strong>{{ message }}</strong></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <p>Thank you for submitting the form! Your information has been successfully received.</p>
+    <!-- Button to generate and download the receipt -->
+    <a href="{{ url_for('generate_receipt') }}">
+        <button>Download Receipt as PDF</button>
+    </a>
+</body>
+</html>

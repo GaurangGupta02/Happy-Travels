@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='happy.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .receipt-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <h3>Booking Receipt</h3>
+        <p><strong>Name:</strong> {{ customer_data['name'] }}</p>
+        <p><strong>Phone:</strong> {{ customer_data['phone'] }}</p>
+        <p><strong>Email:</strong> {{ customer_data['email'] }}</p>
+        <p><strong>Gender:</strong> {{ customer_data['gender'] }}</p>
+        <p><strong>Age:</strong> {{ customer_data['age'] }}</p>
+        <p><strong>Payment Method:</strong> {{ customer_data['payment'] }}</p>
+        <p><strong>Meal Preference:</strong> {{ customer_data['meal_preference'] }}</p>
+        <p><strong>Rating:</strong> {{ customer_data['rating'] }}</p>
+    </div>
+</body>
+</html>
