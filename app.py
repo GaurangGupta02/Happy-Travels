@@ -10,7 +10,7 @@ from dotenv import load_dotenv  # Import dotenv
 load_dotenv()
 
 # Initialize Flask app
-app = Flask(__name__, template_folder='C:\\Users\\Gaurang\\Desktop\\happytravels\\template')
+app = Flask(__name__, template_folder='C:\\Users\\Gaurang\\Desktop\\happytravels\\src\\template')
 app.secret_key = "your_secret_key"  # Secret key for flashing messages
 app.config['SESSION_TYPE'] = 'filesystem'
 # MongoDB configuration
