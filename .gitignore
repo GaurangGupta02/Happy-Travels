@@ -1,0 +1,39 @@
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+env/
+.venv/
+
+# Ignore environment variables
+.env
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore build and distribution files
+build/
+dist/
+*.egg-info/
+
+# Ignore local development files
+*.log
+*.sqlite3
+*.db
+
+# Ignore static and cache files
+staticfiles/
+.cache/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Render-specific files
+.render/
