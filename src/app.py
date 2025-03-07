@@ -5,6 +5,7 @@ from bson import ObjectId
 import os
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv  # Import dotenv
+from .other_module import some_function
 
 # Load environment variables from .env file
 load_dotenv()
