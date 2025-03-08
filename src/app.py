@@ -4,27 +4,25 @@ from xhtml2pdf import pisa
 from bson import ObjectId
 import os
 from werkzeug.utils import secure_filename
-from dotenv import load_dotenv  # Import dotenv
-from .other_module import some_function
-from . import some_module
+from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Initialize Flask app
-app = Flask(__name__, template_folder='C:\\Users\\Gaurang\\Desktop\\happytravels\\src\\template')
-app.secret_key = "your_secret_key"  # Secret key for flashing messages
-app.config['SESSION_TYPE'] = 'filesystem'
+app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY")  # Use environment variable for secret key
+
 # MongoDB configuration
 MONGO_URI = os.getenv("mongodb://localhost:27017/")
-DATABASE_NAME = os.getenv("travel")
-COLLECTION_NAME = os.getenv("customer_records")
+DATABASE_NAME = os.getenv("Happy")
+COLLECTION_NAME = os.getenv("Travels")
 
 # Connect to MongoDB
 try:
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
-    db = client["travel"]
-    collection = db["customer_records"]
+    client = pymongo.MongoClient(mongodb://localhost:27017/)
+    db = client[Happy]
+    collection = db[Travels]
     print("Connected to MongoDB successfully!")
 except Exception as e:
     print(f"Failed to connect to MongoDB: {e}")
