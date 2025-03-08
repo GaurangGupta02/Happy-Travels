@@ -1,15 +1,15 @@
 services:
   - type: web
-    name: happytravels  # Name of your service
+    name: happytravels
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn src.app:app  # Adjust if your app.py is in a different location
+    startCommand: gunicorn src.app:app
     envVars:
       - key: SECRET_KEY
         value: your_secret_key_here
       - key: MONGO_URI
-        value: mongodb://localhost:27017/  # Replace with your MongoDB URI
+        value: mongodb://localhost:27017/
       - key: DATABASE_NAME
-        value: travel
+        value: Happy
       - key: COLLECTION_NAME
-        value: customer_records
+        value: Travels
